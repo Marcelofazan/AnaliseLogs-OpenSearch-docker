@@ -1,11 +1,14 @@
 ## 📈 AnaliseLogs-OpenSearch-docker
-Exemplo de API analise de Logs da Aplicação com OpenSearch e NLog em C# ASP.NET Core 10 Dapper com banco de dados SQLite.
+Exemplo de API Analise de Logs com OpenSearch e NLog em C# ASP.NET Core 10 Dapper com banco de dados SQLite.
 
 #### 📋 O que voçê vai ver nesse Projeto
 | Tecnologia | Descrição |
 |-----------|-----------|
 | **NLog**  |Frameworks de registro de logs, facilitando a manutenção e a auditoria de softwares |
 | **OpenSearch**  | Motor de Busca utilizado para armazenamento e busca de logs centralizados. |
+
+- Os logs da sua aplicação (.NET) irão para o OpenSearch
+- Em sistemas distribuídos, TraceId e SpanId são identificadores usados para rastreabilidade e correlação. Eles permitem rastrear o caminho completo de uma requisição que passa por vários microsserviços e conectar seus logs (gerados via NLog) às métricas de desempenho detalhadas no OpenSearch.
 
 
 💬 Requisitos do Projeto
