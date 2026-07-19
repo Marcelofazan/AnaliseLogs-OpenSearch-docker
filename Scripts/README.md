@@ -2,12 +2,12 @@
 
 #### Logs de hoje
 ```text
-GET /analiselogsopensearch-2026-07-19/_search
+GET /analiselogsopensearch-2026-07-18/_search
 ```
 
 #### Busca refinada procurando especificamente pelo nome do seu controlador para ignorar os ruídos do sistema
 ```text
-GET /analiselogsopensearch-2026-07-19/_search?q=logger:analiselogsopensearch.Controllers.ProdutosController
+GET /analiselogsopensearch-2026-07-18/_search?q=logger:AnaliseLogsOpenSearch.Controllers.ProdutosController
 ```
 
 #### Descobrir como os dados estão estruturados
@@ -75,7 +75,7 @@ GET /analiselogsopensearch-*/_search
 
 #### Limpar e recriar o índice de forma perfeita
 ```text
-DELETE /analiselogsopensearch-2026-07-19
+DELETE /analiselogsopensearch-2026-07-18
 ```
 
 #### Criar o Pipeline de Extração JSON
@@ -102,6 +102,42 @@ PUT _ingest/pipeline/descompactar-json-nlog
             ctx.remove('dados');
           }
         """
+      }
+    }
+  ]
+}
+```
+
+#### Testar a Busca com o Pipeline Ativo
+```text
+POST /analiselogsopensearch-*/_search?pipeline=descompactar-json-nlog
+{
+  "query": {
+    "match": {
+      "message": "1b71c1240bf9c1c30855a9200e3a87b3"
+    }
+  }
+}
+```
+
+#### Tornar Pipeline Extração Automático para Sempre
+```text
+PUT /analiselogsopensearch-*/_settings
+{
+  "index.default_pipeline": "descompactar-json-nlog"
+}
+```
+
+#### Testar a extração simulando um documento
+```text
+POST _ingest/pipeline/descompactar-json-nlog/_simulate
+{
+  "docs": [
+    {
+      "_source": {
+        "@timestamp": "2026-07-18T17:27:29.1714948-03:00",
+        "level": "Info",
+        "message": "{\"timestamp\":\"2026-07-18T17:27:29.171-03:00\",\"level\":\"Info\",\"message\":\"Executed endpoint\",\"traceId\":\"1b71c1240bf9c1c30855a9200e3a87b3\"}"
       }
     }
   ]
