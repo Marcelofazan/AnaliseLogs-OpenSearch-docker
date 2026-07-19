@@ -6,6 +6,7 @@ Exemplo de API Analise de Logs com OpenSearch e NLog em C# ASP.NET Core 10 Dappe
 |-----------|-----------|
 | **NLog**  |Frameworks de registro de logs, facilitando a manutenção e a auditoria de softwares |
 | **OpenSearch**  | Motor de Busca utilizado para armazenamento e busca de logs centralizados. |
+| **Tracing**  | É o caminho completo da requisição, formado por uma árvore de múltiplos spans interligados. |
 
 - Os logs da sua aplicação (.NET) irão para o OpenSearch
 - Em sistemas distribuídos, TraceId e SpanId são identificadores usados para rastreabilidade e correlação. Eles permitem rastrear o caminho completo de uma requisição que passa por vários microsserviços e conectar seus logs (gerados via NLog) às métricas de desempenho detalhadas no OpenSearch.
