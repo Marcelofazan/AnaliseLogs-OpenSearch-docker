@@ -60,7 +60,6 @@ analiselogsopensearch-*
 
 
 - **Passo 2** - Validando a Correlação dos Logs
-- Agora que o padrão está salvo, você pode visualizar e correlacionar tudo de forma limpa:
 - **Passo 2.1** - Vá para a aba Discover no menu esquerdo. Selecione o padrão analiselogsopensearch-* que você acabou de criar.
 - **Passo 2.2** Se você fizer um novo POST de produto, copie o traceId retornado e cole na barra de pesquisa do Discover. Caso Não visualizar, será necessário um pipeline de descompactação geral. Seguir passos do arquivo DQL na pasta **scripts**. 
 
