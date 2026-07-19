@@ -1,5 +1,5 @@
 ## 📈 AnaliseLogs-OpenSearch-docker
-Exemplo de API Analise de Logs com OpenSearch e NLog em C# ASP.NET Core 10 Dapper com banco de dados SQLite.
+Exemplo de API Analise de Logs com NLog e OpenSearch em C# ASP.NET Core 10 Dapper com banco de dados SQLite.
 
 #### 📋 O que voçê vai ver nesse Projeto
 | Tecnologia | Descrição |
