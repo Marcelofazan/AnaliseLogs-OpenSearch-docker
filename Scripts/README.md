@@ -7,7 +7,7 @@ GET /analiselogsopensearch-2026-07-19/_search
 
 #### Busca refinada procurando especificamente pelo nome do seu controlador para ignorar os ruídos do sistema
 ```text
-GET /analiselogsopensearch-2026-07-19/_search?q=logger:opensearch_net.Controllers.ProdutosController
+GET /analiselogsopensearch-2026-07-19/_search?q=logger:analiselogsopensearch.Controllers.ProdutosController
 ```
 
 #### Descobrir como os dados estão estruturados
